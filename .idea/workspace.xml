@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="411ef3e8-8858-46a1-a2aa-d53e6389a791" name="Changes" comment="delete Item Backend success" />
+    <list default="true" id="411ef3e8-8858-46a1-a2aa-d53e6389a791" name="Changes" comment="delete Item Backend success">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 10.1.241.executor": "Run",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Asus/OneDrive/Documents/AAD Module/intro_AAD68/Fruit_Shop",
     "node.js.detected.package.eslint": "true",
@@ -195,7 +198,8 @@
       <workItem from="1722608719892" duration="4356000" />
       <workItem from="1722657513098" duration="4335000" />
       <workItem from="1722664919486" duration="1260000" />
-      <workItem from="1722666206733" duration="2103000" />
+      <workItem from="1722666206733" duration="2192000" />
+      <workItem from="1722671924272" duration="462000" />
     </task>
     <task id="LOCAL-00001" summary="customer save success (postman testing)">
       <option name="closed" value="true" />
