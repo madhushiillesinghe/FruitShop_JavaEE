@@ -54,7 +54,7 @@ public class CustomerController extends HttpServlet {
             Jsonb jsonb = JsonbBuilder.create();
             var customerBOIMPL = new CustomerBoIMPL();
             CustomerDto customer = jsonb.fromJson(req.getReader(), CustomerDto.class);
-            customer.setId(lk.ijse.fruit_shop.util.Utill.idGenerated());
+           // customer.setId(lk.ijse.fruit_shop.util.Utill.idGenerated());
             //Save data in the DB
             writer.write(customerBOIMPL.saveCustomer(customer,connection));
             resp.setStatus(HttpServletResponse.SC_CREATED);

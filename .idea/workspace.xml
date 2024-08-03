@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="411ef3e8-8858-46a1-a2aa-d53e6389a791" name="Changes" comment="delete Item Backend success">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/CustomerController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +202,7 @@
       <workItem from="1722666206733" duration="2192000" />
       <workItem from="1722671924272" duration="1929000" />
       <workItem from="1722693771586" duration="2346000" />
-      <workItem from="1722696599383" duration="310000" />
+      <workItem from="1722696599383" duration="3698000" />
     </task>
     <task id="LOCAL-00001" summary="customer save success (postman testing)">
       <option name="closed" value="true" />
