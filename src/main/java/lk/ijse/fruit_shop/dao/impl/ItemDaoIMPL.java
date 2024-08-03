@@ -1,12 +1,12 @@
-package lk.ijse.fruit_shop.bo.impl;
+package lk.ijse.fruit_shop.dao.impl;
 
-import lk.ijse.fruit_shop.bo.ItemBo;
+import lk.ijse.fruit_shop.dao.ItemDao;
 import lk.ijse.fruit_shop.dto.ItemDto;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class ItemBoIMPL implements ItemBo {
+public class ItemDaoIMPL implements ItemDao {
     @Override
     public String saveItem(ItemDto itemDto, Connection connection) throws SQLException {
         return null;
