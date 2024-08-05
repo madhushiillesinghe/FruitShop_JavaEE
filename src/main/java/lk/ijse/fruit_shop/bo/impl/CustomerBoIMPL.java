@@ -6,6 +6,7 @@ import lk.ijse.fruit_shop.dto.CustomerDto;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class CustomerBoIMPL implements CustomerBo {
     @Override
@@ -31,4 +32,12 @@ public class CustomerBoIMPL implements CustomerBo {
         var customerDAOIMPL = new CustomerDaoIMPL();
         return customerDAOIMPL.getCustomer(id, connection);
     }
+
+    @Override
+    public List<CustomerDto> getAllCustomers(Connection connection) throws SQLException {
+        var customerDAOIMPL = new CustomerDaoIMPL();
+        return customerDAOIMPL.getAllCustomers( connection);
+    }
+
+
 }

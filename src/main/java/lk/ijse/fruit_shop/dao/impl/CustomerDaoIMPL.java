@@ -5,6 +5,8 @@ import lk.ijse.fruit_shop.dto.CustomerDto;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerDaoIMPL implements CustomerDao {
 
@@ -12,6 +14,7 @@ public class CustomerDaoIMPL implements CustomerDao {
     public static String GET_CUSTOMER = "SELECT * FROM customer WHERE id = ?";
     public static  String UPDATE_CUSTOMER="UPDATE customer SET name= ?,address=?,salary=? WHERE id=?";
     public static String DELETE_CUSTOMER = "DELETE FROM customer WHERE id = ?";
+    public static String GET_ALL_CUSTOMER="SELECT * FROM customer";
 
     @Override
     public String saveCustomer(CustomerDto customerDto, Connection connection) throws SQLException {
@@ -70,5 +73,30 @@ public class CustomerDaoIMPL implements CustomerDao {
             throw new SQLException(e.getMessage());
         }
     }
+
+    @Override
+    public List<CustomerDto> getAllCustomers(Connection connection) throws SQLException {
+        try {
+            List<CustomerDto> customerDtolist = new ArrayList<>();
+            var ps = connection.prepareStatement(GET_ALL_CUSTOMER);
+            var rst = ps.executeQuery();
+            while (rst.next()) {
+                CustomerDto customerDto = new CustomerDto();
+
+                customerDto.setId(rst.getString("id"));
+                customerDto.setName(rst.getString("name"));
+                customerDto.setAddress(rst.getString("address"));
+                customerDto.setSalary(rst.getDouble("salary"));
+                customerDtolist.add(customerDto);
+
+            }
+            System.out.println("Customer"+customerDtolist);
+            return customerDtolist;
+
+        } catch (Exception e) {
+            throw new SQLException(e.getMessage());
+
+        }
     }
+}
 

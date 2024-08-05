@@ -84,19 +84,45 @@ public class CustomerController extends HttpServlet {
         }
     }
 
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        try(var writer = resp.getWriter()) {
+//            var customerBOIMPL = new CustomerBoIMPL();
+//            Jsonb jsonb = JsonbBuilder.create();
+//            //DB Process
+//            var customerId = req.getParameter("customerId");;
+//            resp.setContentType("application/json");
+//            jsonb.toJson(customerBOIMPL.getCustomer(customerId,connection),writer);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        var customerId = req.getParameter("customerId");
         try(var writer = resp.getWriter()) {
             var customerBOIMPL = new CustomerBoIMPL();
+
             Jsonb jsonb = JsonbBuilder.create();
-            //DB Process
-            var customerId = req.getParameter("customerId");;
             resp.setContentType("application/json");
-            jsonb.toJson(customerBOIMPL.getCustomer(customerId,connection),writer);
-        }catch (Exception e){
+
+            if (customerId != null) {
+                jsonb.toJson(customerBOIMPL.getCustomer(customerId,connection), writer);
+                resp.setStatus(HttpServletResponse.SC_OK);
+                logger.info("Customer Retrieved Successfully");
+            } else {
+                jsonb.toJson(customerBOIMPL.getAllCustomers(connection), writer);
+                resp.setStatus(HttpServletResponse.SC_OK);
+                logger.info("All Customers Retrieved Successfully");
+            }
+        } catch (Exception e){
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            logger.error("Error while retrieving Customer", e);
             e.printStackTrace();
-        }
-    }
+}
+}
+
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

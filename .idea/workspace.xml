@@ -10,8 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="411ef3e8-8858-46a1-a2aa-d53e6389a791" name="Changes" comment="delete Item Backend success">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/CustomerBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/CustomerBo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/CustomerBoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/CustomerBoIMPL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/CustomerDaoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/CustomerDaoIMPL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +207,9 @@
       <workItem from="1722666206733" duration="2192000" />
       <workItem from="1722671924272" duration="1929000" />
       <workItem from="1722693771586" duration="2346000" />
-      <workItem from="1722696599383" duration="3698000" />
+      <workItem from="1722696599383" duration="5749000" />
+      <workItem from="1722741070879" duration="192000" />
+      <workItem from="1722839323444" duration="6484000" />
     </task>
     <task id="LOCAL-00001" summary="customer save success (postman testing)">
       <option name="closed" value="true" />
