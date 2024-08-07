@@ -2,6 +2,10 @@ package lk.ijse.fruit_shop.bo.impl;
 
 import lk.ijse.fruit_shop.bo.PlaceOrderBo;
 
+import lk.ijse.fruit_shop.dao.DAOFactory;
+import lk.ijse.fruit_shop.dao.ItemDao;
+import lk.ijse.fruit_shop.dao.OrderDao;
+import lk.ijse.fruit_shop.dao.OrderDetailDao;
 import lk.ijse.fruit_shop.dao.impl.ItemDaoIMPL;
 import lk.ijse.fruit_shop.dao.impl.OrderDaoIMPL;
 import lk.ijse.fruit_shop.dao.impl.OrderDetailDaoIMPL;
@@ -14,12 +18,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class PlaceOrderBoIMPL implements PlaceOrderBo {
+    OrderDao orderDaoImpl= (OrderDao) DAOFactory.getDADFactory().getDao(DAOFactory.DADType.ORDER);
+    OrderDetailDao orderDetailDaoImpl= (OrderDetailDao) DAOFactory.getDADFactory().getDao(DAOFactory.DADType.ORDERDETAIL);
+
 
     @Override
     public boolean saveOrder(OrderDto orderDto,Connection connection) throws SQLException {
-        var itemdaoimpl = new ItemDaoIMPL();
-        var orderDaoImpl = new OrderDaoIMPL();
-        var orderDetailDaoImpl = new OrderDetailDaoIMPL();
 
         boolean isOrderSaved;
         boolean isItemUpdated = false;
@@ -66,7 +70,7 @@ public class PlaceOrderBoIMPL implements PlaceOrderBo {
     @Override
     public List<OrderDto> getAllOrder(Connection connection) throws SQLException {
         var orderDaoIMPL = new OrderDaoIMPL();
-        return orderDaoIMPL.getAllOrder( connection);
+        return orderDaoIMPL.getAll( connection);
     }
 
 }

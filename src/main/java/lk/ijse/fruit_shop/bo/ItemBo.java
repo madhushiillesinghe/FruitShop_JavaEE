@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface ItemBo {
+public interface ItemBo extends SuperBo{
     String saveItem(ItemDto itemDto, Connection connection) throws SQLException;
     boolean updateItem(String code,ItemDto itemDto,Connection connection) throws SQLException;
     boolean deleteItem(String code,Connection connection) throws SQLException;

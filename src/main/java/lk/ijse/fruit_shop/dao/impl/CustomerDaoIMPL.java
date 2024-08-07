@@ -17,7 +17,7 @@ public class CustomerDaoIMPL implements CustomerDao {
     public static String GET_ALL_CUSTOMER="SELECT * FROM customer";
 
     @Override
-    public String saveCustomer(CustomerDto customerDto, Connection connection) throws SQLException {
+    public String save(CustomerDto customerDto, Connection connection) throws SQLException {
         try {
             var ps = connection.prepareStatement(SAVE_CUSTOMER);
             ps.setString(1, customerDto.getId());
@@ -35,7 +35,7 @@ public class CustomerDaoIMPL implements CustomerDao {
     }
 
     @Override
-    public boolean updateCustomer(String id, CustomerDto customerDto, Connection connection) throws SQLException {
+    public boolean update(String id, CustomerDto customerDto, Connection connection) throws SQLException {
         try {
             var ps = connection.prepareStatement(UPDATE_CUSTOMER);
             ps.setString(1, customerDto.getName());
@@ -49,14 +49,14 @@ public class CustomerDaoIMPL implements CustomerDao {
     }
 
     @Override
-    public boolean deleteCustomer(String id, Connection connection) throws SQLException {
+    public boolean delete(String id, Connection connection) throws SQLException {
         var ps = connection.prepareStatement(DELETE_CUSTOMER);
         ps.setString(1, id);
         return ps.executeUpdate() != 0;
     }
 
     @Override
-    public CustomerDto getCustomer(String id, Connection connection) throws SQLException {
+    public CustomerDto get(String id, Connection connection) throws SQLException {
         try {
             CustomerDto customerDto= new CustomerDto();
             var ps = connection.prepareStatement(GET_CUSTOMER);
@@ -75,7 +75,7 @@ public class CustomerDaoIMPL implements CustomerDao {
     }
 
     @Override
-    public List<CustomerDto> getAllCustomers(Connection connection) throws SQLException {
+    public List<CustomerDto> getAll(Connection connection) throws SQLException {
         try {
             List<CustomerDto> customerDtolist = new ArrayList<>();
             var ps = connection.prepareStatement(GET_ALL_CUSTOMER);

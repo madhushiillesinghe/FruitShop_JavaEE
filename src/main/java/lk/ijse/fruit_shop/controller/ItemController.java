@@ -7,6 +7,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lk.ijse.fruit_shop.bo.BOFactory;
+import lk.ijse.fruit_shop.bo.CustomerBo;
+import lk.ijse.fruit_shop.bo.ItemBo;
 import lk.ijse.fruit_shop.bo.impl.CustomerBoIMPL;
 import lk.ijse.fruit_shop.bo.impl.ItemBoIMPL;
 import lk.ijse.fruit_shop.dto.CustomerDto;
@@ -26,6 +29,7 @@ public class ItemController extends HttpServlet {
 
     static Logger logger= LoggerFactory.getLogger(ItemController.class);
     Connection connection;
+    ItemBo itemBOIMPL= (ItemBo) BOFactory.getBoFactory().getBo(BOFactory.BOType.ITEM);
 
     @Override
     public void init() throws ServletException {
@@ -50,7 +54,6 @@ public class ItemController extends HttpServlet {
 
         try (var writer = resp.getWriter()){
             Jsonb jsonb = JsonbBuilder.create();
-            var itemBOIMPL = new ItemBoIMPL();
             ItemDto item = jsonb.fromJson(req.getReader(), ItemDto.class);
            // item.setCode(lk.ijse.fruit_shop.util.Utill.idGenerated());
             //Save data in the DB
@@ -67,7 +70,6 @@ public class ItemController extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Todo: Update Student
         try (var writer = resp.getWriter()) {
-            var itemBOIMPL = new ItemBoIMPL();
             var itemCode = req.getParameter("itemCode");
             Jsonb jsonb = JsonbBuilder.create();
             ItemDto itemDto = jsonb.fromJson(req.getReader(), ItemDto.class);
@@ -86,7 +88,6 @@ public class ItemController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var itemCode = req.getParameter("itemCode");
         try(var writer = resp.getWriter()) {
-            var itemBOIMPL = new ItemBoIMPL();
 
             Jsonb jsonb = JsonbBuilder.create();
             resp.setContentType("application/json");
@@ -112,7 +113,6 @@ public class ItemController extends HttpServlet {
         //Todo: Delete Student
         try (var writer = resp.getWriter()) {
             var itemCode = req.getParameter("itemCode");
-            var itemBOIMPL = new ItemBoIMPL();
             if(itemBOIMPL.deleteItem(itemCode,connection)){
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
             }else {

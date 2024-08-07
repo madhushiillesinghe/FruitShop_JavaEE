@@ -10,13 +10,28 @@ import java.util.List;
 
 public class OrderDaoIMPL implements OrderDao {
 
-    public  static String GET_ORDER="SELECT order_id FROM 'orders'  WHERE order_id= ?";
-    public  static String GET_ALL_ORDER="SELECT * FROM 'orders'  ";
+    public  static String GET_ORDER="SELECT order_id FROM orders  WHERE order_id= ?";
+    public  static String GET_ALL_ORDER="SELECT * FROM orders";
 
     public static String SAVE_ORDER="INSERT INTO  orders (order_id,date,customer_id,total,discount,sub_total, cash,balance) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ";
 
     @Override
-    public OrderDto selectOrderId(String orderId,Connection connection) throws SQLException {
+    public String save(OrderDto dto, Connection connection) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public boolean update(String code, OrderDto dto, Connection connection) throws SQLException {
+        return false;
+    }
+
+    @Override
+    public boolean delete(String code, Connection connection) throws SQLException {
+        return false;
+    }
+
+    @Override
+    public OrderDto get(String orderId,Connection connection) throws SQLException {
         try{
             OrderDto orderDto=new OrderDto();
             var ps=connection.prepareStatement(GET_ORDER);
@@ -66,16 +81,22 @@ public class OrderDaoIMPL implements OrderDao {
     }
 
     @Override
-    public List<OrderDto> getAllOrder(Connection connection) throws SQLException {
+    public List<OrderDto> getAll(Connection connection) throws SQLException {
         try{
             List<OrderDto> orderDtoList=new ArrayList<>();
             var ps=connection.prepareStatement(GET_ALL_ORDER);
             var rst=ps.executeQuery();
             while (rst.next()){
                 OrderDto orderDto=new OrderDto();
-                orderDto.setOrderId(rst.getString("order_id "));
-                orderDto.setDate(rst.getString("date "));
+                orderDto.setOrderId(rst.getString("order_id"));
+                orderDto.setDate(rst.getString("date"));
                 orderDto.setCustomerId(rst.getString("customer_id"));
+                orderDto.setTotal(rst.getDouble("total"));
+                orderDto.setDiscount(rst.getString("discount"));
+                orderDto.setSubTotal(rst.getDouble("sub_total"));
+                orderDto.setCash(rst.getDouble("cash"));
+                orderDto.setBalance(rst.getDouble("balance"));
+
                 orderDtoList.add(orderDto);
             }
             System.out.println("Order"+orderDtoList);

@@ -2,6 +2,9 @@ package lk.ijse.fruit_shop.controller;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
+import lk.ijse.fruit_shop.bo.BOFactory;
+import lk.ijse.fruit_shop.bo.CustomerBo;
+import lk.ijse.fruit_shop.bo.PlaceOrderBo;
 import lk.ijse.fruit_shop.bo.impl.CustomerBoIMPL;
 import lk.ijse.fruit_shop.dto.CustomerDto;
 
@@ -25,6 +28,7 @@ import java.sql.SQLException;
 public class CustomerController extends HttpServlet {
     static Logger logger= LoggerFactory.getLogger(CustomerController.class);
     Connection connection;
+    CustomerBo customerBOIMPL= (CustomerBo) BOFactory.getBoFactory().getBo(BOFactory.BOType.CUSTOM);
 
 
     @Override
@@ -52,7 +56,6 @@ public class CustomerController extends HttpServlet {
 
         try (var writer = resp.getWriter()){
             Jsonb jsonb = JsonbBuilder.create();
-            var customerBOIMPL = new CustomerBoIMPL();
             CustomerDto customer = jsonb.fromJson(req.getReader(), CustomerDto.class);
            // customer.setId(lk.ijse.fruit_shop.util.Utill.idGenerated());
             //Save data in the DB
@@ -69,7 +72,6 @@ public class CustomerController extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Todo: Update Student
         try (var writer = resp.getWriter()) {
-            var customerBOIMPL = new CustomerBoIMPL();
             var customerId = req.getParameter("customerId");
             Jsonb jsonb = JsonbBuilder.create();
             CustomerDto customerDto = jsonb.fromJson(req.getReader(), CustomerDto.class);
@@ -102,7 +104,6 @@ public class CustomerController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var customerId = req.getParameter("customerId");
         try(var writer = resp.getWriter()) {
-            var customerBOIMPL = new CustomerBoIMPL();
 
             Jsonb jsonb = JsonbBuilder.create();
             resp.setContentType("application/json");
@@ -129,7 +130,6 @@ public class CustomerController extends HttpServlet {
         //Todo: Delete Student
         try (var writer = resp.getWriter()) {
             var customerId = req.getParameter("customerId");
-            var customerBOIMPL = new CustomerBoIMPL();
             if(customerBOIMPL.deleteCustomer(customerId,connection)){
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
             }else {

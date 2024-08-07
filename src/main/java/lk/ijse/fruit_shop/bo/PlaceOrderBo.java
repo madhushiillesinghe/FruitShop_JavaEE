@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface PlaceOrderBo {
+public interface PlaceOrderBo extends SuperBo{
     boolean saveOrder(OrderDto orderDto, Connection connection) throws SQLException, ClassNotFoundException;
     List<OrderDto> getAllOrder(Connection connection) throws SQLException;
 

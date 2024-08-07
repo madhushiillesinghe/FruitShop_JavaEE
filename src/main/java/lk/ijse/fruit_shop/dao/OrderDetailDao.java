@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface OrderDetailDao {
+public interface OrderDetailDao extends SuperDao{
     boolean saveOrderDetail( OrderDetailDto orderDetailDto, Connection connection) throws SQLException;
     List<OrderDetailDto> getAllOrderDetail(Connection connection) throws SQLException;
 

@@ -18,7 +18,7 @@ public class ItemDaoIMPL implements ItemDao {
     public static String GET_ALL_ITEM="SELECT * FROM item";
 
     @Override
-    public String saveItem(ItemDto itemDto, Connection connection) throws SQLException {
+    public String save(ItemDto itemDto, Connection connection) throws SQLException {
         try {
             var ps = connection.prepareStatement(SAVE_ITEM);
             ps.setString(1, itemDto.getCode());
@@ -36,7 +36,7 @@ public class ItemDaoIMPL implements ItemDao {
     }
 
     @Override
-    public boolean updateItem(String code, ItemDto itemDto, Connection connection) throws SQLException {
+    public boolean update(String code, ItemDto itemDto, Connection connection) throws SQLException {
         try {
             var ps = connection.prepareStatement(UPDATE_ITEM);
             ps.setString(1, itemDto.getDescription());
@@ -50,14 +50,14 @@ public class ItemDaoIMPL implements ItemDao {
     }
 
     @Override
-    public boolean deleteItem(String code, Connection connection) throws SQLException {
+    public boolean delete(String code, Connection connection) throws SQLException {
         var ps = connection.prepareStatement(DELETE_ITEM);
         ps.setString(1, code);
         return ps.executeUpdate() != 0;
     }
 
     @Override
-    public ItemDto getItem(String code, Connection connection) throws SQLException {
+    public ItemDto get(String code, Connection connection) throws SQLException {
         try {
                 ItemDto itemDto= new ItemDto();
             var ps = connection.prepareStatement(GET_ITEM);
@@ -76,7 +76,7 @@ public class ItemDaoIMPL implements ItemDao {
     }
 
     @Override
-    public List<ItemDto> getAllItems(Connection connection) throws SQLException {
+    public List<ItemDto> getAll(Connection connection) throws SQLException {
         try {
             List<ItemDto> itemDtolist = new ArrayList<>();
             var ps = connection.prepareStatement(GET_ALL_ITEM);

@@ -13,6 +13,8 @@ import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
+import lk.ijse.fruit_shop.bo.BOFactory;
+import lk.ijse.fruit_shop.bo.PlaceOrderBo;
 import lk.ijse.fruit_shop.bo.impl.PlaceOrderBoIMPL;
 import lk.ijse.fruit_shop.dto.OrderDetailDto;
 import lk.ijse.fruit_shop.dto.OrderDto;
@@ -28,6 +30,7 @@ import javax.sql.DataSource;
 public class PlaceOrderController extends HttpServlet {
     static Logger logger= LoggerFactory.getLogger(PlaceOrderController.class);
     Connection connection;
+    PlaceOrderBo placeOrderBoImpl= (PlaceOrderBo) BOFactory.getBoFactory().getBo(BOFactory.BOType.PLACEORDER);
 
     @Override
     public void init() throws ServletException {
@@ -52,7 +55,6 @@ public class PlaceOrderController extends HttpServlet {
         }
         try(var writer=resp.getWriter()){
            Jsonb jsonb=JsonbBuilder.create();
-           var placeOrderBoImpl=new PlaceOrderBoIMPL();
            OrderDto orderDto=jsonb.fromJson(req.getReader(), OrderDto.class);
             System.out.println(orderDto + "====In=Controller");
             writer.write(String.valueOf(placeOrderBoImpl.saveOrder(orderDto,connection)));
@@ -61,6 +63,24 @@ public class PlaceOrderController extends HttpServlet {
         } catch (Exception e) {
             resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             logger.info("Error while saving order");
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+        try(var writer=resp.getWriter()){
+            Jsonb jsonb=JsonbBuilder.create();
+            resp.setContentType("application/json");
+
+            jsonb.toJson(placeOrderBoImpl.getAllOrder(connection), writer);
+            resp.setStatus(HttpServletResponse.SC_OK);
+            logger.info("All order Retrieved Successfully");
+        } catch (Exception e) {
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            logger.info("Error while get order");
             e.printStackTrace();
         }
     }
