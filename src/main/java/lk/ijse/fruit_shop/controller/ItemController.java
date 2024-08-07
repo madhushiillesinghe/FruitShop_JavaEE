@@ -24,7 +24,7 @@ import java.sql.SQLException;
 @WebServlet(urlPatterns = "/item" , loadOnStartup = 2)
 public class ItemController extends HttpServlet {
 
-    static Logger logger= LoggerFactory.getLogger(CustomerController.class);
+    static Logger logger= LoggerFactory.getLogger(ItemController.class);
     Connection connection;
 
     @Override
@@ -52,7 +52,7 @@ public class ItemController extends HttpServlet {
             Jsonb jsonb = JsonbBuilder.create();
             var itemBOIMPL = new ItemBoIMPL();
             ItemDto item = jsonb.fromJson(req.getReader(), ItemDto.class);
-            item.setCode(lk.ijse.fruit_shop.util.Utill.idGenerated());
+           // item.setCode(lk.ijse.fruit_shop.util.Utill.idGenerated());
             //Save data in the DB
             writer.write(itemBOIMPL.saveItem(item,connection));
             resp.setStatus(HttpServletResponse.SC_CREATED);
@@ -84,14 +84,25 @@ public class ItemController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        var itemCode = req.getParameter("itemCode");
         try(var writer = resp.getWriter()) {
             var itemBOIMPL = new ItemBoIMPL();
+
             Jsonb jsonb = JsonbBuilder.create();
-            //DB Process
-            var itemCode = req.getParameter("itemCode");;
             resp.setContentType("application/json");
-            jsonb.toJson(itemBOIMPL.getItem(itemCode,connection),writer);
-        }catch (Exception e){
+
+            if (itemCode != null) {
+                jsonb.toJson(itemBOIMPL.getItem(itemCode,connection), writer);
+                resp.setStatus(HttpServletResponse.SC_OK);
+                logger.info("Item Retrieved Successfully");
+            } else {
+                jsonb.toJson(itemBOIMPL.getAllItem(connection), writer);
+                resp.setStatus(HttpServletResponse.SC_OK);
+                logger.info("All Items Retrieved Successfully");
+            }
+        } catch (Exception e){
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            logger.error("Error while retrieving Customer", e);
             e.printStackTrace();
         }
     }

@@ -7,6 +7,7 @@ import lk.ijse.fruit_shop.dto.ItemDto;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ItemBoIMPL implements ItemBo {
     @Override
@@ -31,5 +32,11 @@ public class ItemBoIMPL implements ItemBo {
     public ItemDto getItem(String code, Connection connection) throws SQLException {
         var itemDaoIMPL = new ItemDaoIMPL();
         return itemDaoIMPL.getItem(code, connection);
+    }
+
+    @Override
+    public List<ItemDto> getAllItem(Connection connection) throws SQLException {
+        var itemDAOIMPL = new ItemDaoIMPL();
+        return itemDAOIMPL.getAllItems( connection);
     }
 }

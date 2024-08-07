@@ -13,6 +13,5 @@ public interface CustomerDao {
         boolean deleteCustomer(String id, Connection connection) throws SQLException;
 
         CustomerDto getCustomer(String id, Connection connection) throws SQLException;
-
         List<CustomerDto> getAllCustomers(Connection connection) throws SQLException;
 }

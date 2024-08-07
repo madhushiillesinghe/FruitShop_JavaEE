@@ -1056,7 +1056,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="308" parent="1" name="fruit_shop">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-08-03.05:28:19</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-08-07.07:00:05</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="309" parent="1" name="mysql.infoschema">
@@ -1169,54 +1169,81 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="332" parent="315" name="order_detail_ibfk_1">
+    <column id="332" parent="315" name="unit_price">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <foreign-key id="333" parent="315" name="order_detail_ibfk_1">
       <ColNames>order_id</ColNames>
       <RefColNames>order_id</RefColNames>
       <RefTableName>orders</RefTableName>
     </foreign-key>
-    <foreign-key id="333" parent="315" name="order_detail_ibfk_2">
+    <foreign-key id="334" parent="315" name="order_detail_ibfk_2">
       <ColNames>item_code</ColNames>
       <RefColNames>code</RefColNames>
       <RefTableName>item</RefTableName>
     </foreign-key>
-    <index id="334" parent="315" name="order_id">
+    <index id="335" parent="315" name="order_id">
       <ColNames>order_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="335" parent="315" name="item_code">
+    <index id="336" parent="315" name="item_code">
       <ColNames>item_code</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="336" parent="316" name="order_id">
+    <column id="337" parent="316" name="order_id">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="337" parent="316" name="date">
+    <column id="338" parent="316" name="date">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="338" parent="316" name="customer_id">
+    <column id="339" parent="316" name="customer_id">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="339" parent="316" name="orders_ibfk_1">
+    <column id="340" parent="316" name="total">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="341" parent="316" name="discount">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="342" parent="316" name="sub_total">
+      <DasType>double|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="343" parent="316" name="cash">
+      <DasType>double|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="344" parent="316" name="balance">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="345" parent="316" name="orders_ibfk_1">
       <ColNames>customer_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <index id="340" parent="316" name="PRIMARY">
+    <index id="346" parent="316" name="PRIMARY">
       <ColNames>order_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="341" parent="316" name="customer_id">
+    <index id="347" parent="316" name="customer_id">
       <ColNames>customer_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="342" parent="316" name="PRIMARY">
+    <key id="348" parent="316" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

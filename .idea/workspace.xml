@@ -9,14 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="411ef3e8-8858-46a1-a2aa-d53e6389a791" name="Changes" comment="delete Item Backend success">
+    <list default="true" id="411ef3e8-8858-46a1-a2aa-d53e6389a791" name="Changes" comment="get all customer create">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/PlaceOrderBo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/PlaceOrderBoIMPL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/PlaceOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/OrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/OrderDetailDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/OrderDaoIMPL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/OrderDetailDaoIMPL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dto/OrderDetailDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dto/OrderDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dto/OrderRequestDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fad069c9-6f30-41d2-beba-76261dbd4198.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fad069c9-6f30-41d2-beba-76261dbd4198.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/CustomerBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/CustomerBo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/CustomerBoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/CustomerBoIMPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/ItemBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/ItemBo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/ItemBoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/ItemBoIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/ItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/CustomerDaoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/CustomerDaoIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/ItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/ItemDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/ItemDaoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/ItemDaoIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,12 +79,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Maven.Fruit_Shop [clean].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat 10.1.241.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/OneDrive/Documents/AAD Module/intro_AAD68/Fruit_Shop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/OneDrive/Documents/SE10 Module/FrontEnd&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -96,9 +110,15 @@
       <recent name="C:\Users\Asus\OneDrive\Documents\AAD Module\intro_AAD68\Fruit_Shop\src\main\webapp" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 10.1.241" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.241" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Fruit_Shop:war exploded">
           <settings>
@@ -209,7 +229,17 @@
       <workItem from="1722693771586" duration="2346000" />
       <workItem from="1722696599383" duration="5749000" />
       <workItem from="1722741070879" duration="192000" />
-      <workItem from="1722839323444" duration="6484000" />
+      <workItem from="1722839323444" duration="10351000" />
+      <workItem from="1722852105398" duration="2346000" />
+      <workItem from="1722865004423" duration="9428000" />
+      <workItem from="1722918220032" duration="9363000" />
+      <workItem from="1722940394779" duration="129000" />
+      <workItem from="1722948390205" duration="14083000" />
+      <workItem from="1722965042805" duration="1046000" />
+      <workItem from="1723000234118" duration="2164000" />
+      <workItem from="1723007512471" duration="28000" />
+      <workItem from="1723012798639" duration="5029000" />
+      <workItem from="1723038277435" duration="3366000" />
     </task>
     <task id="LOCAL-00001" summary="customer save success (postman testing)">
       <option name="closed" value="true" />
@@ -259,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722665097128</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="get all customer create">
+      <option name="closed" value="true" />
+      <created>1722846614318</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722846614318</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +309,7 @@
     <MESSAGE value="customer update,delete and get backend success (postman testing)" />
     <MESSAGE value="item dto create" />
     <MESSAGE value="delete Item Backend success" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete Item Backend success" />
+    <MESSAGE value="get all customer create" />
+    <option name="LAST_COMMIT_MESSAGE" value="get all customer create" />
   </component>
 </project>
