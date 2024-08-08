@@ -122,4 +122,9 @@ Feel free to submit issues or pull requests if you find any bugs or want to cont
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+MIT License
+
