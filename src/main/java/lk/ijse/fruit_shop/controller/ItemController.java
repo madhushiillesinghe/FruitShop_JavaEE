@@ -36,9 +36,9 @@ public class ItemController extends HttpServlet {
         logger.info("Init Method invoked");
 
         try{
-            var ctx = new InitialContext(); // connection pool eken connection ekk arahnn ekt
-            DataSource pool = (DataSource) ctx.lookup("java:comp/env/jdbc/fruitManagement"); // cast krl ek datasource ekk hdgnnwa // lookup => apit eken puluwn eke nm dila mokkhri gnna apit ona de lokup krl gann ek cast krgnn jenaric nida
-            this.connection = pool.getConnection(); // DataSource (connection pool ekkt)=> walin getconnection ekk
+            var ctx = new InitialContext();
+            DataSource pool = (DataSource) ctx.lookup("java:comp/env/jdbc/fruitManagement");
+            this.connection = pool.getConnection();
             logger.info("Connection Inizialize",this.connection);
         } catch (SQLException | NamingException e) {
             e.printStackTrace();
@@ -68,7 +68,7 @@ public class ItemController extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //Todo: Update Student
+
         try (var writer = resp.getWriter()) {
             var itemCode = req.getParameter("itemCode");
             Jsonb jsonb = JsonbBuilder.create();
@@ -110,7 +110,7 @@ public class ItemController extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //Todo: Delete Student
+
         try (var writer = resp.getWriter()) {
             var itemCode = req.getParameter("itemCode");
             if(itemBOIMPL.deleteItem(itemCode,connection)){

@@ -9,7 +9,5 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface OrderDao extends CRUDDao<OrderDto>  {
-// OrderDto selectOrderId(String orderId,Connection connection) throws SQLException;
       boolean saveOrder(OrderDto orderDto, Connection connection) throws SQLException;
-//    List<OrderDto> getAllOrder(Connection connection) throws SQLException;
 }

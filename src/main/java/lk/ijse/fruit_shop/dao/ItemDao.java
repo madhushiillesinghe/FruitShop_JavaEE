@@ -8,10 +8,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ItemDao extends CRUDDao<ItemDto> {
-//    String saveItem(ItemDto itemDto, Connection connection) throws SQLException;
-//    boolean updateItem(String code,ItemDto itemDto,Connection connection) throws SQLException;
-//    boolean deleteItem(String code,Connection connection) throws SQLException;
-//    ItemDto getItem(String code,Connection connection) throws SQLException;
-//    List<ItemDto> getAllItems(Connection connection) throws SQLException;
+
 
 }

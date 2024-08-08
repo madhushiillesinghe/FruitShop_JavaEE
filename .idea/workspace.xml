@@ -9,27 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="411ef3e8-8858-46a1-a2aa-d53e6389a791" name="Changes" comment="place order backend completed">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/BOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/SuperBo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/CRUDDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/DAOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/SuperDao.java" afterDir="false" />
+    <list default="true" id="411ef3e8-8858-46a1-a2aa-d53e6389a791" name="Changes" comment="backend finalized">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/CustomerBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/CustomerBo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/ItemBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/ItemBo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/PlaceOrderBo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/PlaceOrderBo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/CustomerBoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/CustomerBoIMPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/ItemBoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/ItemBoIMPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/PlaceOrderBoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/bo/impl/PlaceOrderBoIMPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/controller/PlaceOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/ItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/ItemDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/OrderDetailDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/OrderDetailDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/CustomerDaoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/CustomerDaoIMPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/ItemDaoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/ItemDaoIMPL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/OrderDaoIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/fruit_shop/dao/impl/OrderDaoIMPL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +220,11 @@
       <workItem from="1723000234118" duration="2164000" />
       <workItem from="1723007512471" duration="28000" />
       <workItem from="1723012798639" duration="5029000" />
-      <workItem from="1723038277435" duration="12002000" />
+      <workItem from="1723038277435" duration="12948000" />
+      <workItem from="1723081223036" duration="574000" />
+      <workItem from="1723083131261" duration="962000" />
+      <workItem from="1723117527506" duration="2110000" />
+      <workItem from="1723119669838" duration="509000" />
     </task>
     <task id="LOCAL-00001" summary="customer save success (postman testing)">
       <option name="closed" value="true" />
@@ -305,11 +290,46 @@
       <option name="project" value="LOCAL" />
       <updated>1723050851446</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="CRUD dao ,super dao,super Bo ,dao factory and bo Factory backend code completed">
+      <option name="closed" value="true" />
+      <created>1723061994980</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723061994980</updated>
+    </task>
+    <task id="LOCAL-00010" summary="backend finalized">
+      <option name="closed" value="true" />
+      <created>1723118737577</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723118737577</updated>
+    </task>
+    <task id="LOCAL-00011" summary="backend finalized">
+      <option name="closed" value="true" />
+      <created>1723119069576</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723119069576</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="customer save success (postman testing)" />
@@ -319,6 +339,8 @@
     <MESSAGE value="delete Item Backend success" />
     <MESSAGE value="get all customer create" />
     <MESSAGE value="place order backend completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="place order backend completed" />
+    <MESSAGE value="CRUD dao ,super dao,super Bo ,dao factory and bo Factory backend code completed" />
+    <MESSAGE value="backend finalized" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend finalized" />
   </component>
 </project>
