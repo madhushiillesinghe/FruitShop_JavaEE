@@ -108,6 +108,9 @@ Here is a brief description of the available API endpoints:
 4. Deploy the backend on a Java EE server.
 5. Open the `index.html` file in your browser to start the frontend.
 
+## Project Repository
+
+You can find the frontend development project on GitHub [Frontend POS System](https://github.com/madhushiillesinghe/IJSE-POS.git).
 
 
 ## License
