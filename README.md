@@ -2,26 +2,29 @@
 
 ## Introduction
 
-The Fruit Shop POS (Point of Sale) System is a comprehensive solution designed to streamline the operations of a fruit shop. This project leverages the power of modern web technologies to provide a user-friendly interface and robust backend support.
+The Fruit Shop POS (Point of Sale) System is a comprehensive solution designed to streamline the operations of a fruit shop. This project leverages the power of modern web technologies to provide a user-friendly interface, robust backend support, and efficient data management.
 
 ### Technologies Used
 
 - **Backend:** Java EE
 - **Frontend:** HTML, CSS, JavaScript
+- **Database:** MySQL
 - **Communication:** AJAX
 
 ### Project Overview
 
-This POS system enables efficient management of sales, inventory, and customer transactions in a fruit shop setting. The frontend, built with HTML, CSS, and JavaScript, offers an intuitive and responsive user interface. The backend, powered by Java EE, ensures reliable data processing and storage. AJAX is utilized to facilitate seamless asynchronous communication between the frontend and backend, enhancing the user experience by enabling real-time updates without needing to reload the page.
+This POS system enables efficient management of sales, inventory, and customer transactions in a fruit shop setting. The frontend, built with HTML, CSS, and JavaScript, offers an intuitive and responsive user interface. The backend, powered by Java EE, ensures reliable data processing and business logic execution. MySQL is utilized as the database to store and manage the system's data, ensuring data integrity and consistency. AJAX is employed to facilitate seamless asynchronous communication between the frontend and backend, allowing for real-time updates without the need to reload the page.
 
 ### Features
 
 - **Sales Management:** Process transactions quickly and accurately.
 - **Inventory Tracking:** Monitor stock levels and manage product information.
 - **Customer Management:** Maintain customer records and purchase history.
+- **Database Integration:** Use MySQL for efficient and reliable data storage and retrieval.
 - **Real-Time Updates:** Utilize AJAX for efficient, real-time data communication.
 
-This project demonstrates a cohesive integration of frontend and backend technologies to create a functional and efficient POS system tailored for a fruit shop.
+This project demonstrates a cohesive integration of frontend and backend technologies, along with robust database management, to create a functional and efficient POS system tailored for a fruit shop.
+
 
 
 ## API Documentation
